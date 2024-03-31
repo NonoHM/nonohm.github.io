@@ -8,8 +8,6 @@ toc:
     toc-depth: 3
 ---
 
-# THM Mr Robot CTF 
-
 ## Task 1 - Connect to our Network
 
 To begin with, just connect to the network using the OpenVPN file provided in the access room.

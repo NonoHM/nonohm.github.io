@@ -8,8 +8,6 @@ toc:
     toc-depth: 3
 ---
 
-# THM CTF Investigating Windows Writeup
-
 ## Introduction
 
 In today's CTF, we'll investigate a windows machine that has been hacked to find clues of what the hacker might have done.

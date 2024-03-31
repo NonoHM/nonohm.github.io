@@ -8,8 +8,6 @@ toc:
     toc-depth: 3
 ---
 
-# THM CTF Wonderland
-
 In today's mission, we'll have to compromise a machine in order to retrieve flags.
 
 To begin with, we scan the machine if there's an specific opened port with nmap

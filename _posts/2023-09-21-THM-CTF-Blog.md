@@ -8,8 +8,6 @@ toc:
     toc-depth: 3
 ---
 
-# THM CTF Blog
-
 ## Introduction
 
 In today's writeup, we'll try to enumerate and find flags on the machine which hosts the new blog of Billy Joel.
