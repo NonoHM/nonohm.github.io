@@ -18,8 +18,8 @@ The purpose of this room is to introduce users to basic cryptography concepts su
 * Hashing
 * PKI
 
-One of the earliest cryptographic mechanism is Ceasar Cipher. Its priciple is to shift the letter by a fixed number of places to the left or right. Consequently the key is between 1 and 25, the number of shifts.
-Example: TryHackMe -> WubKdfnPh with a key of 3.
+One of the earliest cryptographic mechanism is Caesar Cipher. Its principle is to shift the letter by a fixed number of places to the left or right. Consequently the key is between 1 and 25, the number of shifts.
+For example: TryHackMe -> WubKdfnPh with a key of 3.
 
 This is a **substitution cipher** because we replace each letter by another. Another type of cipher is called **transposition cipher**, which encrypts the message by changing the order of the letters.
 
@@ -50,9 +50,9 @@ Let’s review some terminology:
 
 A symmetric encryption algorithm uses the same key for encryption and decryption. Consequently, the communicating parties need to agree on a secret key before being able to exchange any messages.
 
-In 1977, the Data Encryption Standard (DES) was puslished by the National Institute of Standard and Technology (NIST). This is an encryption algorithm that uses a key size of 56 bits and it nowadays considered as an insecure cypher algoritm because it has demonstrated that the key could be brute-force searched.
+In 1977, the Data Encryption Standard (DES) was published by the National Institute of Standard and Technology (NIST). This is an encryption algorithm that uses a key size of 56 bits and it nowadays considered as an insecure cipher algoritm because it has demonstrated that the key could be brute-force searched.
 
-In 2001, the same organization published the Advanced Encryption Standard (AES). Like DES it is a symmetric algorithm but it uses keys of 128, 196 or 256 bits ans it is still considered as secure today.
+In 2001, the same organization published the Advanced Encryption Standard (AES). Like DES it is a symmetric algorithm but it uses keys of 128, 196 or 256 bits and it is still considered as secure today.
 AES iterate through these transformations multiple times:
 
 - `SubBytes(state)`: This transformation looks up each byte in a given substitution table (S-box) and substitutes it with the respective value. The state is 16 bytes, i.e., 128 bits, saved in a 4 by 4 array.
@@ -71,7 +71,7 @@ Symmetric encyption solves the CIA Triad problem:
 - **Integrity**: Even minor modifications lead to gibberish plaint text.
 - **Authenticity**: Only the conserned parts must know the key.
 
-These two programsare widely use for symmetric but asymmetric encryption as well:
+These two programs are widely use for symmetric but asymmetric encryption as well:
 
 * GNU Privacy Guard
 * OpenSSL Project
@@ -144,7 +144,7 @@ Confidentiality is achieved by encrypting using the public key and decrypting us
 
 ### Integrity, Authenticity, and Nonrepudiation
 
-They are achieved by encrypting using the private key and decrypting using the public key. Because the owner is normally the only one who have the key, this proves he is really the author.
+They are achieved by encrypting using the private key and decrypting using the public key. Because the owner is normally the only one who has the key, this proves he is really the author.
 
 - **Integrity**: The message is not altered.
 - **Authenticity**: By successfully de-signing using the public key, it proves the author of the message by comparing the encrypted and the de-signed encrypted message.
@@ -459,4 +459,4 @@ Using the website [md5encrypt.net](https://md5decrypt.net/):
 
 ## Task 9 - Conclusion
 
-Cryptography is a vast topic. In this room, we tried to focus on the core concepts that would help you understand the commonly used terms in cryptography. This knowledge is vital to understanding the configuration options of systems that use encryption and hashing.
+Cryptography is a vast topic. In this room, we have tried to focus on the core concepts that would help you understand the commonly used terms in cryptography. This knowledge is vital for understanding the configuration options of systems that use encryption and hashing.

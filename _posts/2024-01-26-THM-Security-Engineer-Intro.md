@@ -11,7 +11,7 @@ toc:
 
 ## Task 1 - Introduction
 
-Security engineers form the backbone a enterprise's cyber security. 
+Security engineers form the backbone of a enterprise's cyber security.  
 
 ### Learning Objectives
 
@@ -23,7 +23,7 @@ Security engineers form the backbone a enterprise's cyber security.
 
 ### Why Do Organizations Need Security?
 
-While technology has made the life of organizations a lot easier, it also created a new type data and money revenue for unethical hackers. We often hear about companies getting hacked or ransomed and other type of attacks. In response to these threats, digital security has been growing and some dedicate whole departments created and are still creating.
+While technology has made the life of organizations a lot easier, it also created a new type data and revenue for unethical hackers. We often hear about companies getting hacked or ransomed and other types of attacks. In response to these threats, digital security has been growing and some dedicate whole departments created and are still creating.
 
 ### The Role of a Security Engineer
 
@@ -33,7 +33,7 @@ A security engineer is someone who:
 - Ensures that the organization's cyber security risk is minimized.
 - Creates systems and strategies against cyber threats and secure network solutions.
 - Periodically conducts tests to ensure the robustness of the infrastructure and correct if needed.
-- Collaborates ans coordinates with other teams to establish security protocols across the organization.
+- Collaborates and coordinates with other teams to establish security protocols across the organization.
 
 ### Qualifications Required for a Security Engineer
 
@@ -49,7 +49,7 @@ When hiring a security engineer, organizations look for:
 
 *Answer: `Security Engineer`*
 
-## Task 3 - Core Responsibilities of a Security Engineer 
+## Task 3 - Core Responsibilities of a Security Engineer  
 
 ### Asset Management/Asset Inventory
 
@@ -69,7 +69,7 @@ A security engineer helps the creation of security policies based on:
 
 ### Secure by Design
 
-The engineer understands that the security posture receives the most Return on Investment if he follows a secure-by-design philoshophy. This means the implemntation of a Secure network Architecture and the hardenization of the machines as much as secure software development.
+The engineer understands that the security posture receives the most Return on Investment if he follows a secure-by-design philosophy. This means the implemntation of a Secure network Architecture and the hardenization of the machines as much as secure software development.
 
 > Ref: [Windows Hardening](https://tryhackme.com/room/microsoftwindowshardening), [Linux Hardening](https://tryhackme.com/room/linuxsystemhardening), [Active Directory Hardening](https://tryhackme.com/room/activedirectoryhardening), [Secure Software Development Lifecycle](https://tryhackme.com/room/securesdlc)
 
@@ -132,11 +132,11 @@ A security engineer might sometimes be required to configure or fine-tune securi
 
 ### Tabletop Exercises
 
-Certain scenarios are identified, exercised. In them, security team members must explain their respective role, like an employee getting hacked, and the security engineer is sometimes required to conduct these exercises.
+Certain scenarios are identified, exercised. In these, security team members must explain their respective role, like an employee getting hacked, and the security engineer is sometimes required to conduct these exercises.
 
 ### Disaster Recovery and Crisis Management
 
-A robust security posture requires organizations to plan for untoward incidents, disasters, or crises. In any such scenario, the top priority of the executive management is to maintain business continuity. A security engineer might be involved in disaster recovery, business continuity, and crisis management planning as part of the different compliance frameworks and the organization's internal policies.
+A robust security posture requires organizations to plan for untoward incidents, disasters, or crises. In any such scenario, the top priority for executive management is to maintain business continuity. A security engineer might be involved in disaster recovery, business continuity, and crisis management planning as part of the different compliance frameworks and the organization's internal policies.
 
 ### Questions
 

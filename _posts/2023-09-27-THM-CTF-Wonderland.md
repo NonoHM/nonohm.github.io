@@ -10,7 +10,7 @@ toc:
 
 In today's mission, we'll have to compromise a machine in order to retrieve flags.
 
-To begin with, we scan the machine if there's an specific opened port with nmap
+To begin with, we scan the machine to identify specific open ports with nmap
 
 ``` sh
 ┌──(kali㉿kali)-[~]
@@ -189,7 +189,7 @@ Segmentation fault (core dumped)
 
 We get a "Segmentation fault (core dumped)" returned string, so we may have to put a special keyword.
 I'll analyze the binary by using `strings` on my own machine since it's not available in wonderland.
-We also can use Ghidra to get more details. 
+We can also use Ghidra to get more details.  
 
 ``` sh
 ┌──(kali㉿kali)-[~/Documents/THM/CTF/Wonderland]

@@ -15,7 +15,7 @@ In this room, we will have to investigate into the CyberT's IT departement guy's
 
 ## Task 3 - Nothing suspicious... So far
 
-To start with, we check the informations about the OS with `cat  /etc/os-release`.
+To start with, we check information about the OS with `cat  /etc/os-release`.
 
 ``` sh
 NAME="Ubuntu"
@@ -32,7 +32,7 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
 
-We can see this is a normal Ubuntu 18.04.5.
+We can see that this is a normal Ubuntu 18.04.5.
 
 Then, we check what are the users on the machine in the `passwd` file.
 
@@ -96,7 +96,7 @@ nano /etc/ssh/sshd_config
 sudo nano /etc/ssh/sshd_config 
 ```
 
-It seems that the IT guy have added a new user named *it-admin*, changed sudoers file, changed root password and sshd configuration.
+It seems that the IT guy have added a new user named *it-admin* changed sudoers file, changed root password and sshd configuration.
 
 We can see the sudoers file has been changed by user *cybert* on December 28 at 6:27 AM.
 

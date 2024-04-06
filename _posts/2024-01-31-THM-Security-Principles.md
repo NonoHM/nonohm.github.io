@@ -11,7 +11,7 @@ toc:
 
 ## Task 1 - Introduction
 
-Security has become a buzzword and everyone wants to claim their product is. In order to make our ones as secure as possible, we should know the adversaries attacks, tactiques and techniques to implement appropriate security controls.
+Security has become a buzzword and everyone wants to claim their product is. In order to make our own products as secure as possible, we should know the adversaries attacks, tactics and techniques to implement appropriate security controls.
 
 The objective of this room is to:
 
@@ -38,7 +38,7 @@ Examples:
 
 ### Beyond CIA
 
-Another thing that can be useful to consider as well as the CIA Triad, is the Autheticity and Non-Repudiation.
+Another thing that can be useful to consider as well as the CIA Triad, is the Authenticity and Non-Repudiation.
 
 - **Authenticity**: It ensures the document/material is from the claimed source.
 - **Non-Repudiation**: It ensures the original author can't deny being the original author of the material/data...
@@ -112,14 +112,14 @@ The Bell-LaPadula Model aims to achieve **confidentiality** with three rules:
 - **Star Security Property**: Referred as "No write down". A higher security level cannot write an object at a lower level.
 - **Discretionary-Security Property**: This property uses an access matrix to allow read/write operations.
 
-With these rules, we can send information from lower levels "Write up" and receive information from lower ones "Read down". The limitaion is that model is not designed for file sharing.
+With these rules, we can send information from lower levels "Write up" and receive information from lower ones "Read down". The limitation is that model is not designed for file sharing.
 
 ### Biba Model
 
 The Biba Model aims to achieve **integrity** by specifying two rules:
 
 - **Simple Integrity Property**: "No read down", a higher level cannot read information from lower levels.
-- **Star Integrity Property**: "No write up", a lowel level cannot write iformation for higher levels.
+- **Star Integrity Property**: "No write up", a lowel level cannot write information for higher levels.
 
 These rules contrast with the Bell-LaPadula model and this model suffers that it can't handle internal threats.
 
@@ -164,7 +164,7 @@ It lists five architectural principles:
 
 1. **Domain Separation**: Every set of related components is grouped as a single entity. Components can be applications, data or other ressources. Each entity will have its own domain and be assigned a common set of security attributes. Example: Ring architecture of Operating Systems (Kernel/User mode).
 2. **Layering**: By splitting a system into different layers, it becomes possible to impose security at different levels. This is used in the OSI model, which splits the networking function into 7 layers.
-3. **Encapsulation**: Like in OOP, direct manipulation of data should be prevented by providing an abstration like a method to safely manipulate the data. This is made by using an API to interface with an application.
+3. **Encapsulation**: Like in OOP, direct manipulation of data should be prevented by providing an abstraction like a method to safely manipulate the data. This is made by using an API to interface with an application.
 4. **Redundancy**: This principle ensures availability and integrity of data by putting backup or RAID configurations into systems.
 5. **Virtualization/Containerization**: The generic concept is to share a single set of hardware among multiple operating systems. They are mainly used for their sandboxing capabilities to test programs or run isolated applications. Unlike virtualization, containerization provides the same kernel for multiple lightweight sandboxes and is more flexible than virtualization but needs a security emphasis on the shared kernel.
 

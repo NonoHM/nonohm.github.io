@@ -10,11 +10,11 @@ toc:
 
 ## Introduction
 
-In today's writeup, we'll try to enumerate and find flags on the machine which hosts the new blog of Billy Joel.
+In today's writeup, we'll try to enumerate and find flags on the machine that hosts the new blog of Billy Joel.
 
 ## Walkthrough
 
-To begin with, we'll fisrtly add blog.thm to our */etc/hosts* file (I'm working with kali linux).
+To begin with, we will firstly add blog.thm to our */etc/hosts* file (I'm working with kali linux).
 (Don't forget to connect with openvpn to the network)
 
 ``` sh
@@ -41,7 +41,7 @@ Nmap done: 1 IP address (1 host up) scanned in 2.15 seconds
 ```
 
 We see the machine may host a webservice.
-When I try to connect to it using a browser, I'm welcomed with this.
+When I try to connect to it using a browser, I'm welcomed by this.
 
 ![Website](/assets/img/images/thm_ctf_blog/BkITB77-a.png)
 
@@ -170,7 +170,7 @@ xmlrpc.php              [Status: 405, Size: 42, Words: 6, Lines: 1, Duration: 11
 
 ```
 
-After that, I try to connect to the admin panel but I have no usernames and admin doesn't work. I use hydra to test them.
+After that, I attempt to connect to the admin panel, but I don't have any usernames, and 'admin' doesn't work. I use hydra to test these.
 
 ``` sh
 hydra -L top-usernames.txt -p test blog.thm http-post-form "/wp-login/:log=^USER^&pwd=^PASS^:F=Invalid username"
@@ -397,7 +397,7 @@ Not an Admin
 +++ exited (status 0) +++
 ```
 
-It looks that it checks if there is any environement variable with the name *"admin"*. With this knowledge acquired, we have to export a env var with the account *www-data*.
+It looks that it checks if there is any environement variable with the name *"admin"*. With this acquired knowledge, we have to export a env var with the account *www-data*.
 
 ``` sh
 export admin="nil";

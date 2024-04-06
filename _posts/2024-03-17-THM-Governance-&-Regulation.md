@@ -11,7 +11,7 @@ toc:
 
 ## Task 1 - Introduction  
 
-In cybersecurity, where in malicious actors relentlessly endeavour to exploit vulnerabilities in highly-sensitive systems, we have to combat these threats with a comprehensive approach to information security governance & regulation.
+In cybersecurity, where malicious actors relentlessly endeavour to exploit vulnerabilities in highly-sensitive systems, we have to combat these threats with a comprehensive approach to information security governance & regulation.
 Such an approach requires establishing robust policies and guidelines and implementing rigorous monitoring and enforcement mechanisms to ensure compliance
 
 ### Learning Objectives  
@@ -27,13 +27,13 @@ Such an approach requires establishing robust policies and guidelines and implem
 
 1. **Governance**: Managing and directing an organization/system to achieve its objectives and ensure compliance with laws, regulations, and standards.
 2. **Regulation**: A rule/law enforced by a gorvening body to ensure compliance and protect against harm.
-3. **Compliance**: The stat of adhering to laws/regulations/standards that apply to an organization/system.
+3. **Compliance**: The state of adhering to laws/regulations/standards that apply to an organization/system.
 
 ### Information Security Governance
 
 Information Security Governance represents an organization's established structure, policies, methods and guidelines designed to guarantee the privacy, reliability and accesibility of its information assets.  
 
-To keep away unauthorized intrusion, an ISG should falls under the following processes:
+To keep away unauthorized intrusion, an ISG should fall under the following processes:
 
 - **Strategy**: Developing and implementing a comprehensive information security strategy that aligns with the organisation's overall business objectives.
 - **Policies and procedures**: Preparing policies and procedures that govern the use and protection of information assets.
@@ -167,7 +167,7 @@ If these are not respected, penalties and fines could be charged against the com
 
 ### NIST 800-53
 
-[NIST 800-53](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf) is a publication titled "Security and Privacy Controls for Information Systems and Organisations" developed by the National Institute of Standards and Technology. It serves as a framework fo organizations to assess and enhance the security and privacy of their information systems and comply with various laws, regulations, and policies.
+[NIST 800-53](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf) is a publication titled "Security and Privacy Controls for Information Systems and Organisations" developed by the National Institute of Standards and Technology. It serves as a framework for organizations to assess and enhance the security and privacy of their information systems and comply with various laws, regulations, and policies.
 
 NIST 800-53 Revision 5 organises security controls into twenty families, each addressing a specific security concern category.  
 
@@ -175,7 +175,7 @@ NIST 800-53 Revision 5 organises security controls into twenty families, each ad
 
 ### Implmenting NIST 800-53
 
-**Program Management** is one of the most crucial point of the framework. It dictates establishing, implementing, and monitoring organisation-wide programs for information security and privacy while safeguarding the processed, stored, or transmitted through systems. These subcontrols needs to be implmented:
+**Program Management** is one of the most crucial point of the framework. It dictates establishing, implementing, and monitoring organisation-wide programs for information security and privacy while safeguarding the processed, stored, or transmitted through systems. These subcontrols need to be implmented:
 
 {% include figure.liquid path="/assets/img/images/thm_governance_&_regulation/Hyv1LoERT.png" title="PM Controls" class="img-fluid rounded z-depth-1 bg-white" %}
 
@@ -254,7 +254,7 @@ Technical and specific controls, like ensuring data encryption in transit, netwo
 
 ## Task 8 - Conclusion  
 
-Here, we have seen a comprehensive overview of the importance of developing an effective information security governance & regulation framework to protect an organisation's valuable assets and sensitive information. We also have viewed laws and regulations about privacy and data protection such as GDPR and PCI DSS. The GRC framework concept has been explained  in order to develop a secure organization's outlook.
+Here, we have seen a comprehensive overview of the importance of developing an effective information security governance and regulation framework to protect an organisation's valuable assets and sensitive information. We also have viewed laws and regulations about privacy and data protection such as GDPR and PCI DSS. The GRC framework concept has been explained  in order to develop a secure organization's outlook.
 
 Furthermore, we have highlighted different governance enablers, such as ISO/IEC 27001, NIST 800-53, and NIST Special Publication 800-63B, and explained how they provide information security protection to an organisation.
 

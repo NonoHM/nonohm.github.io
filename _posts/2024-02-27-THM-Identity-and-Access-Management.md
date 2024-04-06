@@ -11,7 +11,7 @@ toc:
 
 ## Task 1 - Introduction
 
-In this room, we will cover some concepts which answers to the question "How to verify a leigitmate user and how to restrict access ?".
+In this room, we will cover some concepts which answer to the question "How to verify a legitimate user and how to restrict access ?".
 
 1. Identification
 2. Authentication
@@ -38,7 +38,7 @@ These four stages consists of :
 
 1. **Identification** is the process of verifying who the user is. It starts with a user claiming an identity, like a username, an email address...
 2. **Authentication** is the process of ensuring the user is the one he pretends to be. This can be made through passwords, SSO, one-time codes...
-3. **Authorization** determines what rights the user has to access to something. This process is usually done by assinging roles and permissions to an acocunt and normally, the only ones the user needs to perform his actions.
+3. **Authorization** determines what rights the user has to access to something. This process is usually done by assinging roles and permissions to an account and normally, the only ones the user needs to perform his actions.
 4. **Accountability** tracks the user's activity to ensure who is responsible for what. This is typically done by logging all the user activity and storing it in a centralized location.
 
 IAAA helps prevent unauthorised access, data breaches, and other security incidents. By implementing these best practices, organisations can protect their sensitive information and resources from internal and external threats.
@@ -59,9 +59,9 @@ IAAA helps prevent unauthorised access, data breaches, and other security incide
 
 ## Task 3 - Identification
 
-Identification is how the user claims a specific identitiy without verifying. This is made through a unique number, name, email address...
+Identification is how the user claims a specific identity without verifying. This is made through a unique number, name, email address...
 
-Howerver, without a proper authentication system, anyone can claim to be anything, like giving a fake identity.
+However, without a proper authentication system, anyone can claim to be anything, like giving a fake identity.
 
 ### Questions
 
@@ -86,7 +86,7 @@ Howerver, without a proper authentication system, anyone can claim to be anythin
 ## Task 4 - Authentication
 
 Authentication is the process of verifying the user's identity.
-Idenficitation and Authentication are core components of any information system and network. It is essential to understand the difference between authentication and identification.
+Identification and Authentication are core components of any information system and network. It is essential to understand the difference between authentication and identification.
 
 This process is usually accomplished through one of the following ways:
 
@@ -163,7 +163,7 @@ Logging is the process of recording events that occur within a system. This proc
 
 A comprehensive logging system can identify anomalies and alert or take actions over them if configured for.
 
-Logs should be **tamper-proof** in order to not be deleted, that is why a separate logging server is a good practive in a network.
+Logs should be **tamperproof** in order to not be deleted, that is why a separate logging server is a good practive in a network.
 
 **Log forwarding** is the process of sending log data from one system to another. This process often aggregates log data from multiple sources into a central location for more accessible analysis and management.
 
@@ -209,9 +209,9 @@ To resume, IdM simplifies the user identity and access management by centralizin
 
 IAM is like subcategory of IdM. It works with the IdM but it focuses more on identity and access management. It ensures that only authorized users have access to specific resources. It also monitors and controls access.
 
-It is a comprhensive and secure solution to access to ressources by providing various technologies like role-based access control, Multi-Factor Authentication (MFA) and Single Sign On (SSO).
+It is a comprhensive and secure solution to access to resources by providing various technologies like role-based access control, Multi-Factor Authentication (MFA) and Single Sign On (SSO).
 
-IAM help organization comply with regulatory requirements such as [HIPAA](https://www.hipaaguide.net/hipaa-for-dummies/) or [GDPR](https://www.hipaaguide.net/gdpr-for-dummies/). they provide functionnalities to manage lifecycle of user identities, including onboarding, offboarding, and access revocation.
+IAM help organization comply with regulatory requirements such as [HIPAA](https://www.hipaaguide.net/hipaa-for-dummies/) or [GDPR](https://www.hipaaguide.net/gdpr-for-dummies/). they provide functionalities to manage lifecycle of user identities, including onboarding, offboarding, and access revocation.
 
 To clarify, IdM systems manage user identities, while IAM systems encompass broader functions to manage and secure digital identities and access rights.
 
@@ -236,7 +236,7 @@ A user log in on a page and the password is encrypted. Unfortuantely, the attack
 ### Unique Challenge Response
 
 An encrypted password with always the same value is easy to circumvent.
-One approach would be to send an encryption of the current time along with the password. It requires for both parts to synchronize their clocks and ensures the response is only valid for a brief time. 
+One approach would be to send an encryption of the current time along with the password. It requires for both parts to synchronize their clocks and ensures the response is only valid for a brief time.  
 This is one way to do it and although it is not that secure, authentication protocols are beyond the scope of this room.
 
 ### Question
@@ -247,7 +247,7 @@ This is one way to do it and although it is not that secure, authentication prot
 
 ## Task 9 - Access Control Models
 
-A system controls access to various resources based on the chosen model. Somme of the common ones are:
+A system controls access to various resources based on the chosen model. Some of the common ones are:
 
 1. Discretionary Access Control (DAC)
 2. Role-Based Access Control (RBAC)
@@ -259,7 +259,7 @@ DAC is the fact of explicitely giving permissions to users. This is mainly used 
 
 ### Role-Based Access Control
 
-RBAC uses an intutive approach of control. Each user has one or more roles, furthermore they are authorized to access different ressources based on their roles. Authroization and access will be granted based on the group the user belongs to.
+RBAC uses an intuitive approach of control. Each user has one or more roles, furthermore they are authorized to access different resources based on their roles. Authroization and access will be granted based on the group the user belongs to.
 
 This approach makes maintenance more manageable and efficient by adding or removing roles if needed.
 
@@ -287,7 +287,7 @@ Answer the following questions using the correct item number from the numbered l
 
 ## Task 10 - Single Sign On
 
-Accessing ressources on multiple platforms usally requires multiple login credentials for successful secure authentication. The number of different usernames and passwords makes it quite challenging.
+Accessing resources on multiple platforms usally requires multiple login credentials for successful secure authentication. The number of different usernames and passwords makes it quite challenging.
 
 Single Sign On (SSO) tackles this problem beacause it provides a centralized authentication method, which means one login credential to remember.
 
@@ -302,7 +302,7 @@ Some advantages are:
 
 Some disadvantages:
 
-- **More dangerous compromising**: If the account is compromised, every ressources with SSO access are compromised too.
+- **More dangerous compromising**: If the account is compromised, every resources with SSO access are compromised too.
 - **Outage incident**: Every accesses are unavailable without SSO.
 - **Complexity**: SSO implementation and session are complex to make.
 
@@ -330,7 +330,7 @@ Some disadvantages:
 
 ## Task 11 - Scenarios
 
-Answer the options one the *View Site* button.
+Answer the options on the *View Site* button.
 
 * Fingerprint/Pattern/Code: Authentication
 * ATM random code: Identification

@@ -10,7 +10,7 @@ toc:
 
 ## Introduction
 
-In this room, we are asked to do some online and offline seach about a provided image of the famous valley background of Windows XP.
+In this room, we are asked to do some online and offline search about a provided image of the famous valley background of Windows XP.
 
 ## Task 1 - OhSINT
 
@@ -56,7 +56,7 @@ Then, we can see his profile picture is a cat
 
 **What city is this person in?**
 
-With the website [wigle.net](https://wigle.net/), which is a map of many wifi networks availale across the world, we can try to locate him using his WiFi's BSSID he provided on his X account.
+With the website [wigle.net](https://wigle.net/), which is a map of many wifi networks available across the world, we can try to locate him using his WiFi's BSSID he provided on his X account.
 
 ![BSSID Location](/assets/img/images/thm_ctf_ohsint/H1ZNI5MBT.png)
 
@@ -64,7 +64,7 @@ With the website [wigle.net](https://wigle.net/), which is a map of many wifi ne
 
 **What is the SSID of the WAP he connected to?**
 
-To see the Wifi's SSID, we need first to create an account. After that, we have to zoom until we see the correct network.
+To see the WiFi SSID, we need first to create an account. After that, we have to zoom until we identify the correct network.
 
 ![SSID Location](/assets/img/images/thm_ctf_ohsint/Hy_awqGHa.png)
 
@@ -82,7 +82,7 @@ Like said previously, on GitHub.
 
 *Answer: `GitHub`
 
-**Where has he gone on holiday?**
+**Where hasAfter digging in his blog's source code he gone on holiday?**
 
 On his [personal blog](https://oliverwoodflint.wordpress.com/author/owoodflint/), he says he went to New York.
 
@@ -90,7 +90,7 @@ On his [personal blog](https://oliverwoodflint.wordpress.com/author/owoodflint/)
 
 **What is the person's password?**
 
-After digging in his blog's source code, we can see a weird string appearing.
+After digging into his blog's source code, we can see a weird string appearing.
 
 ![Blog Source Code](/assets/img/images/thm_ctf_ohsint/Bk5O25MBT.png)
 
