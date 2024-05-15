@@ -3,7 +3,7 @@ layout: post
 title: THM Windows Internals
 tags: [THM, Malware Analysis, Operating System, Windows]
 author: NonoHM
-date: 2024-04-20 17:32:42
+date: 2024-04-21 17:32:42
 toc:
     sidebar: left
     toc-depth: 3
