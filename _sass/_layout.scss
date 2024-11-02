@@ -28,7 +28,11 @@ body.sticky-bottom-footer {
 }
 
 .container {
-  max-width: $max-content-width;
+  max-width: 1000px;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 // Profile

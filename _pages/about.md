@@ -18,6 +18,6 @@ social: false # includes social icons at the bottom of the page
 ---
 
 Nice to meet you, I'm Noah and welcome to my personal website.  
-I am currently a 2nd year student in the "BUT Réseaux & Télécommunications" program. I like doing sports and music besides learning new things in IT.
+I am currently a 3rd year student in the "BUT Réseaux & Télécommunications" program. I like doing sports, music and practicing languages besides learning new things in IT.
 
 I will post most of my writeups and my projects here, enjoy !
